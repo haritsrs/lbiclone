@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Selamat Datang, <?php echo $username; ?>!</h1>
+    <!-- Tombol untuk menampilkan informasi pengguna -->
+    <?php if (isset($_SESSION['user_id'])) { ?>
+        <form method="post" action="display_user.php">
+            <button type="submit" name="display_user">Tampilkan Pengguna</button>
+        </form>
+    <?php } ?>
+    <!-- Konten halaman index lainnya -->
+</body>
+</html>

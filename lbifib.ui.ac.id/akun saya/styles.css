@@ -1,0 +1,179 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f7f9fc;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+form {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 2000px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+h2 {
+  text-align: center;
+  color: #333333;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  color: #666666;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+input:focus, select:focus {
+  border-color: #4A90E2;
+  outline: none;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  padding: 12px;
+  width: 48%;
+  margin-top: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[name="save"] {
+  background-color: #4A90E2;
+  color: #ffffff;
+}
+
+button[name="save"]:hover {
+  background-color: #357ABD;
+}
+
+button[name="delete"] {
+  background-color: #e74c3c;
+  color: #ffffff;
+}
+
+button[name="delete"]:hover {
+  background-color: #c0392b;
+}
+
+@media (max-width: 600px) {
+  form {
+    padding: 20px;
+  }
+
+  input, select, button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+  }
+}
+.header {
+  width: 100%;
+  background-color: #003366;
+  color: white;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo a img {
+  height: 60px; /* Ubah ukuran sesuai kebutuhan */
+  margin-left: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer {
+  background-color: #003366;
+  color: white;
+  padding: 20px 0;
+  width: 100%;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.footer-logo img {
+  height: 60px; /* Ubah ukuran sesuai kebutuhan */
+}
+
+.footer-contact, .footer-email {
+  margin: 10px;
+}
+
+.footer-contact p, .footer-email p {
+  margin: 5px 0;
+}

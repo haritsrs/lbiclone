@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Pendaftaran Baru</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <a href="index.html" class="home-link">
+        <img src="logo.png" alt="Beranda" class="home-logo">
+    </a>
+    <div class="container">
+        <h2>Registrasi Kursus</h2>
+        <p class="instruction">Sebelum mengisi form registrasi ini, harap lengkapi dulu informasi pelanggan pada Akun dashboard Anda, di menu pojok kanan atas klik menu > Akun Saya kemudian klik Biodata Peserta!</p>
+        <form method="POST" action="proses_pendaftaran.php">
+
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required><br><br>
+
+            <label for="nama">Nama Lengkap:</label><br>
+            <input type="text" id="nama" name="nama" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="handphone">Handphone:</label><br>
+            <input type="text" id="handphone" name="handphone" required><br><br>
+
+            <label for="lokasi">Lokasi:</label><br>
+            <select id="lokasi" name="lokasi" required>
+                <option value="">- Pilih -</option>
+                <option value="Pusat">Pusat</option>
+                <option value="Salemba">Salemba</option>
+                <option value="Daring">Daring</option>
+            </select><br><br>
+
+            <label for="moda">Moda:</label><br>
+            <select id="moda" name="moda" required>
+                <option value="">- Pilih -</option>
+                <option value="Luring">Luring</option>
+                <option value="Daring">Daring</option>
+            </select><br><br>
+
+            <label for="kursus">Kursus:</label><br>
+            <select id="kursus" name="kursus" required>
+                <option value="">- Pilih -</option>
+                <option value="General English">General English</option>
+                <option value="Business English">Business English</option>
+                <option value="Conversation">Conversation</option>
+                <option value="Academic Writing">Academic Writing</option>
+                <option value="Legal English">Legal English</option>
+            </select><br><br>
+
+            <label for="level">Level:</label><br>
+            <select id="level" name="level" required>
+                <option value="">- Pilih Kursus Terlebih Dahulu -</option>
+            </select><br><br>
+
+            <label for="tes_penempatan">Ikuti Tes Penempatan:</label>
+            <input type="checkbox" id="tes_penempatan" name="tes_penempatan"><br><br>
+
+            <div id="jadwal_tes" style="display: none;">
+                <label for="tanggal_tes">Jadwal Tes Penempatan (Tanggal):</label><br>
+                <input type="date" id="tanggal_tes" name="tanggal_tes"><br><br>
+            </div>
+
+            <label for="keringanan">Ajukan Keringanan:</label>
+            <input type="checkbox" id="keringanan" name="keringanan"><br><br>
+
+            <label for="syarat_ketentuan">Saya Setuju Syarat dan Ketentuan:</label>
+            <input type="checkbox" id="syarat_ketentuan" name="syarat_ketentuan" required><br><br>
+
+            <button type="submit">Daftar</button>
+        </form>
+    </div>
+    
+    <script>
+        document.getElementById("tes_penempatan").addEventListener("change", function() {
+            var jadwalTes = document.getElementById("jadwal_tes");
+            if (this.checked) {
+                jadwalTes.style.display = "block";
+            } else {
+                jadwalTes.style.display = "none";
+            }
+        });
+
+        document.getElementById("kursus").addEventListener("change", function() {
+            var kursus = this.value;
+            var level = document.getElementById("level");
+            level.innerHTML = '<option value="">- Pilih Level -</option>';
+            if (kursus === "General English") {
+                for (var i = 1; i <= 10; i++) {
+                    level.innerHTML += '<option value="' + i + '">' + i + '</option>';
+                }
+            } else if (kursus) {
+                for (var i = 1; i <= 4; i++) {
+                    level.innerHTML += '<option value="' + i + '">' + i + '</option>';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
